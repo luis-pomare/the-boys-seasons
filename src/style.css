@@ -1,3 +1,15 @@
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 h1 {
-  color: rgb(11, 128, 0);
+  color: #b4e197;
+}
+
+body {
+  background-color: #f1eee9;
+}
+
+.cards {
+  background-color: #73777b;
 }
