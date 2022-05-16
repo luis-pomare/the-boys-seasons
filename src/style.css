@@ -8,6 +8,51 @@ h1 {
 
 body {
   background-color: #f1eee9;
+  box-sizing: border-box;
+}
+
+header {
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  background-image: linear-gradient(to bottom right, rgba(0, 0, 0, 0.9) 20%, rgba(241, 238, 233, 0.5));
+  height: 400px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 800px;
+  height: 80px;
+}
+
+nav .logo {
+  width: 100%;
+  max-width: 100px;
+}
+
+nav .list-items {
+  display: flex;
+  width: 400px;
+  gap: 50px;
+  list-style: none;
+}
+
+.list-items .list-item {
+  padding: 10px;
+}
+
+.list-items .list-item a {
+  color: #7ad33f;
+  font-size: 26px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.list-items .list-item:hover {
+  color: #b4e197;
 }
 
 .cards {

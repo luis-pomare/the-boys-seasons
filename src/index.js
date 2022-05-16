@@ -1,13 +1,10 @@
-import _ from "lodash";
-import "./style.css";
-import Logo from './image/logo.jpg';
-function component() {
-  const element = document.createElement("div");
+import './style.css';
+import Icon from './image/logo.jpg';
 
-  // Lodash, now imported by this script
-  element.innerHTML = _.join(["Hello", "webpack"], " ");
-  element.classList.add("hello");
-  return element;
-}
-
-document.body.appendChild(component());
+const imge = document.querySelector('#logoimg');
+imge.src = Icon;
+// const Test= document.querySelector('.test');
+// const myIcon = new Image();
+// myIcon.src = Icon;
+// Test.appendChild(myIcon);
+//   console.log(Test.nodeName);
