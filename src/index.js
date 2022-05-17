@@ -1,7 +1,9 @@
 import './style.css';
+import storage from './modules/storage.js';
 import Icon from './image/logo.jpg';
+import navListeners from './modules/navListeners.js';
 
-const imge = document.querySelector('#logoimg');
-imge.src = Icon;
-const image2 = document.querySelector('.image');
-image2.src = Icon;
+document.getElementById('logoimg').src = Icon; // Main logo displaying
+
+storage.getSeasonOne();
+navListeners();
