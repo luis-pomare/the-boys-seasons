@@ -17,7 +17,7 @@ class Update {
         <i class="fa-solid fa-heart"></i>
         <p class="likes-counter">5 likes</p>
         </div>
-        <button class="comments-button">Comments</button>
+        <button class="comments-button" id="${info[i].id}">Comments</button>
       </div>
     </div>`;
     }
