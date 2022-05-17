@@ -6,16 +6,17 @@ class Update {
       container.innerHTML += `<div class="cards">
       <div class="card">
         <img
-          id="card-image"
-          src="./image/logo.jpg"
+          src="${info[i]['image']['original']}"
           class="image"
           alt="card image"
         />
         <div class="card-title">
           <h2>${info[i]['name']}</h2>
-          <i class="fa-solid fa-heart"></i>
-        </div>
+          </div>
+        <div class='likes-container'>
+        <i class="fa-solid fa-heart"></i>
         <p class="likes-counter">5 likes</p>
+        </div>
         <button class="comments-button">Comments</button>
       </div>
     </div>`;
