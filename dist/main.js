@@ -116,7 +116,7 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _modules_storage__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/storage */ \"./src/modules/storage.js\");\n/* harmony import */ var _image_logo_jpg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./image/logo.jpg */ \"./src/image/logo.jpg\");\n\r\n\r\n\r\n\r\ndocument.getElementById('logoimg').src = _image_logo_jpg__WEBPACK_IMPORTED_MODULE_2__; // Main logo displaying\r\n\r\n_modules_storage__WEBPACK_IMPORTED_MODULE_1__[\"default\"].getSeasonOne();\r\n_modules_storage__WEBPACK_IMPORTED_MODULE_1__[\"default\"].getSeasonTwo();\r\n\n\n//# sourceURL=webpack://webpacktemplate/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _modules_storage__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/storage */ \"./src/modules/storage.js\");\n/* harmony import */ var _image_logo_jpg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./image/logo.jpg */ \"./src/image/logo.jpg\");\n\r\n\r\n\r\n\r\ndocument.getElementById('logoimg').src = _image_logo_jpg__WEBPACK_IMPORTED_MODULE_2__; // Main logo displaying\r\n\r\n_modules_storage__WEBPACK_IMPORTED_MODULE_1__[\"default\"].getSeasonOne();\r\n\n\n//# sourceURL=webpack://webpacktemplate/./src/index.js?");
 
 /***/ }),
 
@@ -126,7 +126,17 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _sty
   \********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nclass Storage {\r\n  getSeasonOne = async () => {\r\n    const response = await fetch(\r\n      'https://api.tvmaze.com/seasons/40764/episodes'\r\n    );\r\n    this.seasonOne = await response.json();\r\n  };\r\n\r\n  getSeasonTwo = async () => {\r\n    const response = await fetch(\r\n      'https://api.tvmaze.com/seasons/103731/episodes'\r\n    );\r\n    this.seasonTwo = await response.json();\r\n  };\r\n}\r\n\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (new Storage());\r\n\n\n//# sourceURL=webpack://webpacktemplate/./src/modules/storage.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _update_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./update.js */ \"./src/modules/update.js\");\n\r\nclass Storage {\r\n  getSeasonOne = async () => {\r\n    const response = await fetch(\r\n      'https://api.tvmaze.com/seasons/40764/episodes'\r\n    );\r\n    this.seasonOne = await response.json();\r\n    _update_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"].season(this.seasonOne);\r\n  };\r\n\r\n  getSeasonTwo = async () => {\r\n    const response = await fetch(\r\n      'https://api.tvmaze.com/seasons/103731/episodes'\r\n    );\r\n    this.seasonTwo = await response.json();\r\n  };\r\n}\r\n\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (new Storage());\r\n\n\n//# sourceURL=webpack://webpacktemplate/./src/modules/storage.js?");
+
+/***/ }),
+
+/***/ "./src/modules/update.js":
+/*!*******************************!*\
+  !*** ./src/modules/update.js ***!
+  \*******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nclass Update {\r\n  season(info) {\r\n    let container = document.getElementById('container');\r\n    container.innerHTML = '';\r\n    for (let i = 0; i < info.length; i += 1) {\r\n      container.innerHTML += `<div class=\"cards\">\r\n      <div class=\"card\">\r\n        <img\r\n          id=\"card-image\"\r\n          src=\"./image/logo.jpg\"\r\n          class=\"image\"\r\n          alt=\"card image\"\r\n        />\r\n        <div class=\"card-title\">\r\n          <h2>${info[i]['name']}</h2>\r\n          <i class=\"fa-solid fa-heart\"></i>\r\n        </div>\r\n        <p class=\"likes-counter\">5 likes</p>\r\n        <button class=\"comments-button\">Comments</button>\r\n      </div>\r\n    </div>`;\r\n    }\r\n  }\r\n}\r\n\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (new Update());\r\n\n\n//# sourceURL=webpack://webpacktemplate/./src/modules/update.js?");
 
 /***/ }),
 
