@@ -7,7 +7,7 @@ class Modal {
     this.closeBtn = document.querySelector('.close');
     this.modalContent = document.querySelector('#modalContent');
   }
-   
+
   displayModal = () => {
     this.comBtn.forEach((btn) => {
       btn.addEventListener('click', async () => {
@@ -25,20 +25,20 @@ class Modal {
           <p class="meta-data"> Rating: ${APIdata.rating.average} </p>
           <p class="meta-data"> Summary: ${APIdata.summary} </p>
        </div>`;
-  
+
         /* close modal */
         this.closeBtn.addEventListener('click', () => {
           this.commentModal.style.display = 'none';
         });
-  
+
         window.addEventListener('click', (e) => {
           if (e.target === this.commentModal) {
             this.commentModal.style.display = 'none';
           }
         });
       });
-    });
-    
+});
+
   }
 }
 const modal = new Modal();
