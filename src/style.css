@@ -21,13 +21,13 @@ header {
       rgba(0, 0, 0, 0.9) 20%,
       rgba(241, 238, 233, 0.5)
     );
-  height: 400px;
+  height: 300px;
 }
 
 nav {
   display: flex;
-  justify-content: space-between;
   margin: 0 auto;
+  gap: 100px;
   width: 100%;
   max-width: 800px;
   height: 80px;
@@ -41,7 +41,7 @@ nav .logo {
 nav .list-items {
   display: flex;
   width: 400px;
-  gap: 50px;
+  justify-content: space-between;
   list-style: none;
 }
 
@@ -61,9 +61,41 @@ nav .list-items {
 }
 
 .card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
   background-color: #73777b;
   width: 200px;
+  height: 300px;
   margin: 10px;
+  padding: 20px;
+}
+
+.image {
+  width: 90%;
+}
+
+button {
+  padding: 7px;
+  font-weight: 700;
+  font-size: 17px;
+}
+
+#container {
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: center;
+  align-items: center;
+  gap: 10% 20%;
+  margin: 30px;
+  overflow: scroll;
+}
+
+#container::-webkit-scrollbar {
+  display: none;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 footer {
@@ -120,4 +152,18 @@ footer {
   color: black;
   text-decoration: none;
   cursor: pointer;
+
+.fa-heart {
+  color: rgb(215, 40, 69);
+  font-size: 27px;
+}
+
+.likes-counter {
+  font-weight: 700;
+}
+
+.likes-container {
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
