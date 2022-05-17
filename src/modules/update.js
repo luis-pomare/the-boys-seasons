@@ -1,17 +1,17 @@
 class Update {
   season(info) {
-    let container = document.getElementById('container');
+    const container = document.getElementById('container');
     container.innerHTML = '';
     for (let i = 0; i < info.length; i += 1) {
       container.innerHTML += `<div class="cards">
       <div class="card">
         <img
-          src="${info[i]['image']['original']}"
+          src="${info[i].image.original}"
           class="image"
           alt="card image"
         />
         <div class="card-title">
-          <h2>${info[i]['name']}</h2>
+          <h2>${info[i].name}</h2>
           </div>
         <div class='likes-container'>
         <i class="fa-solid fa-heart"></i>
@@ -21,6 +21,7 @@ class Update {
       </div>
     </div>`;
     }
+    this.inUse = true;
   }
 }
 

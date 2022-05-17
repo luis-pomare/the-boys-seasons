@@ -116,7 +116,17 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _modules_storage__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/storage */ \"./src/modules/storage.js\");\n/* harmony import */ var _image_logo_jpg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./image/logo.jpg */ \"./src/image/logo.jpg\");\n\r\n\r\n\r\n\r\ndocument.getElementById('logoimg').src = _image_logo_jpg__WEBPACK_IMPORTED_MODULE_2__; // Main logo displaying\r\n\r\n_modules_storage__WEBPACK_IMPORTED_MODULE_1__[\"default\"].getSeasonOne();\r\n\n\n//# sourceURL=webpack://webpacktemplate/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _modules_storage_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/storage.js */ \"./src/modules/storage.js\");\n/* harmony import */ var _image_logo_jpg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./image/logo.jpg */ \"./src/image/logo.jpg\");\n/* harmony import */ var _modules_navListeners_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/navListeners.js */ \"./src/modules/navListeners.js\");\n\r\n\r\n\r\n\r\n\r\ndocument.getElementById('logoimg').src = _image_logo_jpg__WEBPACK_IMPORTED_MODULE_2__; // Main logo displaying\r\n\r\n_modules_storage_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"].getSeasonOne();\r\n\n\n//# sourceURL=webpack://webpacktemplate/./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/modules/navListeners.js":
+/*!*************************************!*\
+  !*** ./src/modules/navListeners.js ***!
+  \*************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _storage_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./storage.js */ \"./src/modules/storage.js\");\n\r\nfunction navListeners() {\r\n  document.getElementById('seasonOne').addEventListener('click', () => {\r\n    _storage_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"].getSeasonOne();\r\n  });\r\n\r\n  document.getElementById('seasonTwo').addEventListener('click', () => {\r\n    _storage_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"].getSeasonTwo();\r\n  });\r\n}\r\n\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (navListeners());\r\n\n\n//# sourceURL=webpack://webpacktemplate/./src/modules/navListeners.js?");
 
 /***/ }),
 
@@ -126,7 +136,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _sty
   \********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _update_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./update.js */ \"./src/modules/update.js\");\n\r\nclass Storage {\r\n  getSeasonOne = async () => {\r\n    const response = await fetch(\r\n      'https://api.tvmaze.com/seasons/40764/episodes'\r\n    );\r\n    this.seasonOne = await response.json();\r\n    _update_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"].season(this.seasonOne);\r\n  };\r\n\r\n  getSeasonTwo = async () => {\r\n    const response = await fetch(\r\n      'https://api.tvmaze.com/seasons/103731/episodes'\r\n    );\r\n    this.seasonTwo = await response.json();\r\n    _update_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"].season(this.seasonTwo);\r\n  };\r\n}\r\n\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (new Storage());\r\n\n\n//# sourceURL=webpack://webpacktemplate/./src/modules/storage.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _update_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./update.js */ \"./src/modules/update.js\");\n\r\nclass Storage {\r\n  getSeasonOne = async () => {\r\n    const response = await fetch(\r\n      'https://api.tvmaze.com/seasons/40764/episodes'\r\n    );\r\n    this.seasonOne = await response.json();\r\n    _update_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"].season(this.seasonOne);\r\n  };\r\n\r\n  getSeasonTwo = async () => {\r\n    const response = await fetch(\r\n      'https://api.tvmaze.com/seasons/103731/episodes'\r\n    );\r\n    this.seasonTwo = await response.json();\r\n    this.seasonTwo.splice(3, 1);\r\n    _update_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"].season(this.seasonTwo);\r\n  };\r\n}\r\n\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (new Storage());\r\n\n\n//# sourceURL=webpack://webpacktemplate/./src/modules/storage.js?");
 
 /***/ }),
 
