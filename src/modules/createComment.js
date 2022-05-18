@@ -15,11 +15,9 @@ const createComment = async (e, btn) => {
     username: name.value,
     comment: comment.value,
   };
-  console.log(body);
   const postResponse = await postComment(body);
   console.log(postResponse);
   form.reset();
-  console.log('createComment');
 
   const commentData = await getCommnets(btn.id);
 
@@ -31,7 +29,7 @@ const createComment = async (e, btn) => {
     p.textContent = `${item.creation_date} ${item.username}: ${item.comment}`;
     comDetail.appendChild(p);
   });
-  console.log(commentData);
+  return commentData;
 };
 
 export default createComment;

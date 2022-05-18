@@ -14,6 +14,7 @@ class Modal {
     comBtn.forEach((btn) => {
       btn.addEventListener('click', async () => {
         /* display modal */
+
         const commentData = await getCommnets(btn.id);
         const APIdata = episodes.filter((ep) => ep.id === parseInt(btn.id, 10));
         this.commentModal.style.display = 'block';
@@ -32,8 +33,8 @@ class Modal {
           <form action="#" id="comForm">
            <h3 id="addCom">Add a Comment</h3>
          <div class="comInputs">
-           <input type="text" id="name" name="name" class="comInput" placeholder="Your Name..">
-           <textarea name="comment" id="comment" class="comInput" cols="30" rows="8"></textarea>
+           <input type="text" id="name" name="name" class="comInput" placeholder="Your Name.." required>
+           <textarea name="comment" id="comment" class="comInput" cols="30" rows="8" required></textarea>
          </div>
           <input type="button" value="Submit" class="commentBtn" id= "${btn.id}">
         </form>
