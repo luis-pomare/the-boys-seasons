@@ -1,5 +1,3 @@
-import fetchSingleItem from './fetchSingleItem.js';
-
 class Modal {
   constructor() {
     this.comBtn = document.querySelectorAll('.comments-button');
@@ -8,22 +6,21 @@ class Modal {
     this.modalContent = document.querySelector('#modalContent');
   }
 
-  displayModal = () => {
-    this.comBtn.forEach((btn) => {
-      btn.addEventListener('click', async () => {
+  displayModal = (comBtn,episodes) => {
+     comBtn.forEach((btn) => {
+      btn.addEventListener('click', async (e) => {
         /* display modal */
-        const APIdata = await fetchSingleItem(1641576);
-        console.log(APIdata);
+        const APIdata = episodes.filter((ep) => ep.id == btn.id);
         this.commentModal.style.display = 'block';
         this.modalContent.innerHTML = `
-       <img src="${APIdata.image.medium}" alt="poster">
-      <h1 style="color: red;">Episode ${APIdata.number}</h1>
+       <img src="${APIdata[0].image.medium}" alt="poster">
+      <h1 style="color: red;">Episode ${APIdata[0].number}</h1>
        <div class="metaData">
-          <p class="meta-data"> Airdate : ${APIdata.airdate} </p>
-          <p class="meta-data"> Name : ${APIdata.name} </p>
-          <p class="meta-data"> Episode : ${APIdata.number} </p>
-          <p class="meta-data"> Rating: ${APIdata.rating.average} </p>
-          <p class="meta-data"> Summary: ${APIdata.summary} </p>
+          <p class="meta-data"> Airdate : ${APIdata[0].airdate} </p>
+          <p class="meta-data"> Name : ${APIdata[0].name} </p>
+          <p class="meta-data"> Episode : ${APIdata[0].number} </p>
+          <p class="meta-data"> Rating: ${APIdata[0].rating.average} </p>
+          <p class="meta-data"> Summary: ${APIdata[0].summary} </p>
        </div>`;
 
         /* close modal */
@@ -39,6 +36,12 @@ class Modal {
       });
     });
   }
+
+  getEpisodes = (episodes) => {
+  
+    return episodes;
+  }
 }
+
 const modal = new Modal();
 export default modal;

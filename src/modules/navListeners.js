@@ -10,4 +10,4 @@ function navListeners() {
   });
 }
 
-export default navListeners();
+export default navListeners;

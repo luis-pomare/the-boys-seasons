@@ -6,9 +6,10 @@ import navListeners from './modules/navListeners.js';
 
 document.getElementById('logoimg').src = Icon; // Main logo displaying
 
-storage.getSeasonOne();
-navListeners();
+
+
 
 window.onload = () => {
-  modal.displayModal();
+  storage.getSeasonOne();
+  navListeners();
 };

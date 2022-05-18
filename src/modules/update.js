@@ -1,5 +1,8 @@
+import modal from "./modal.js";
+
 class Update {
   season(info) {
+    console.log(info)
     const container = document.getElementById('container');
     container.innerHTML = '';
     for (let i = 0; i < info.length; i += 1) {
@@ -22,7 +25,12 @@ class Update {
     </div>`;
     }
     this.inUse = true;
+
+    /* getNodeList for comments buttons */
+    const com = document.querySelectorAll('.comments-button')
+     modal.displayModal(com,info);
   }
 }
+
 
 export default new Update();

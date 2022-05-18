@@ -7,6 +7,7 @@ class Storage {
     );
     this.seasonOne = await response.json();
     update.season(this.seasonOne);
+    
   };
 
   getSeasonTwo = async () => {
@@ -16,6 +17,7 @@ class Storage {
     this.seasonTwo = await response.json();
     this.seasonTwo.splice(3, 1);
     update.season(this.seasonTwo);
+
   };
 }
 
