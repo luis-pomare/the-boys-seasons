@@ -1,3 +1,5 @@
+import modal from './modal.js';
+
 class Update {
   season(info) {
     const container = document.getElementById('container');
@@ -22,6 +24,10 @@ class Update {
     </div>`;
     }
     this.inUse = true;
+
+    /* getNodeList for comments buttons */
+    const com = document.querySelectorAll('.comments-button');
+    modal.displayModal(com, info);
   }
 }
 
