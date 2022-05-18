@@ -147,6 +147,10 @@ footer {
   gap: 10px;
 }
 
+.addCom {
+  color: red;
+}
+
 .comInputs {
   display: flex;
   flex-direction: column;
