@@ -1,4 +1,5 @@
 import modal from './modal.js';
+import likesListeners from './likesListeners.js';
 
 class Update {
   season(info) {
@@ -28,18 +29,17 @@ class Update {
     /* getNodeList for comments buttons */
     const com = document.querySelectorAll('.comments-button');
     modal.displayModal(com, info);
+
+    likesListeners();
   }
 
   likes(info) {
     const cards = document.getElementById('container').children;
     for (let i = 0; i < info.length; i += 1) {
       for (let j = 0; j < cards.length; j += 1) {
-        const element = document.getElementById('container').children[j].children[2]
-          .children[1].dataset.id;
+        const element = cards[j].children[2].children[1].dataset.id;
         if (info[i].item_id === element) {
-          document.getElementById('container').children[
-            j
-          ].children[2].children[1].innerText = `${info[i].likes} likes`;
+          cards[j].children[2].children[1].innerText = `${info[i].likes} likes`;
           this.found = true;
         }
       }

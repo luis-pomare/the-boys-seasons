@@ -1,6 +1,6 @@
 import storage from './storage.js';
 
-function navListeners() {
+export default () => {
   document.getElementById('seasonOne').addEventListener('click', () => {
     storage.getSeasonOne();
     storage.getLikes();
@@ -10,6 +10,4 @@ function navListeners() {
     storage.getSeasonTwo();
     storage.getLikes();
   });
-}
-
-export default navListeners;
+};

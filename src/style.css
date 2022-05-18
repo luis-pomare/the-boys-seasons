@@ -196,6 +196,7 @@ footer {
 .fa-heart {
   color: rgb(215, 40, 69);
   font-size: 27px;
+  cursor: pointer;
 }
 
 .likes-counter {
