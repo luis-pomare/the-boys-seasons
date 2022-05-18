@@ -5,7 +5,7 @@ class Update {
     const container = document.getElementById('container');
     container.innerHTML = '';
     for (let i = 0; i < info.length; i += 1) {
-      container.innerHTML += `<div class="cards">
+      container.innerHTML += `
       <div class="card">
         <img
           src="${info[i].image.original}"
@@ -16,18 +16,34 @@ class Update {
           <h2>${info[i].name}</h2>
           </div>
         <div class='likes-container'>
-        <i class="fa-solid fa-heart"></i>
-        <p class="likes-counter">5 likes</p>
+        <i class="fa-solid fa-heart" data-id='${info[i].id}'></i>
+        <p class="likes-counter" data-id='${info[i].id}'>0 likes</p>
         </div>
         <button class="comments-button" id="${info[i].id}">Comments</button>
       </div>
-    </div>`;
+    `;
     }
     this.inUse = true;
 
     /* getNodeList for comments buttons */
     const com = document.querySelectorAll('.comments-button');
     modal.displayModal(com, info);
+  }
+
+  likes(info) {
+    const cards = document.getElementById('container').children;
+    for (let i = 0; i < info.length; i += 1) {
+      for (let j = 0; j < cards.length; j += 1) {
+        const element = document.getElementById('container').children[j].children[2]
+          .children[1].dataset.id;
+        if (info[i].item_id === element) {
+          document.getElementById('container').children[
+            j
+          ].children[2].children[1].innerText = `${info[i].likes} likes`;
+          this.found = true;
+        }
+      }
+    }
   }
 }
 

@@ -90,13 +90,8 @@ button {
   align-items: center;
   gap: 10% 20%;
   margin: 30px;
-  overflow: scroll;
-}
-
-#container::-webkit-scrollbar {
-  display: none;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+  overflow-y: visible;
+  height: 2100px;
 }
 
 footer {
