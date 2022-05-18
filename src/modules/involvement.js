@@ -12,7 +12,16 @@ export const postComment = async (body) => {
 };
 
 export const getCommnets = async (id) => {
-  const response = await fetch(`${url}comments?item_id=${id}`);
-  const data = await response.json();
-  return data;
+  let data;
+  const dataArray = [{ creation_date: '2022-05-18', username: 'Barbra', comment: 'Wow ! i was on toes when Milk finally learned about the Supes.❤️😁' }];
+  try {
+    const response = await fetch(`${url}comments?item_id=${id}`);
+    data = await response.json();
+    data.forEach((item) => {
+      dataArray.push(item);
+    });
+  } catch (error) {
+    console.log(error);
+  }
+  return dataArray;
 };
