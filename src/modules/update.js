@@ -16,8 +16,8 @@ class Update {
           <h2>${info[i].name}</h2>
           </div>
         <div class='likes-container'>
-        <i class="fa-solid fa-heart"></i>
-        <p class="likes-counter">0 likes</p>
+        <i class="fa-solid fa-heart" data-id='${info[i].id}'></i>
+        <p class="likes-counter" data-id='${info[i].id}'>0 likes</p>
         </div>
         <button class="comments-button" id="${info[i].id}">Comments</button>
       </div>
@@ -31,6 +31,7 @@ class Update {
   }
 
   likes(info) {
+    const cards = document.body.children;
     console.log(info);
   }
 }

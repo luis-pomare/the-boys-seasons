@@ -20,7 +20,7 @@ class Storage {
 
   getLikesOne = async () => {
     const response = await fetch(
-      'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/D5IrJdhD8VQvHMImeTvu/likes/'
+      'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/mSaRFqdkMnkop7U1e7L5/likes/'
     );
     this.likesOne = await response.json();
     update.likes(this.likesOne);
@@ -28,7 +28,7 @@ class Storage {
 
   getLikesTwo = async () => {
     const response = await fetch(
-      'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/D5IrJdhD8VQvHMImeTvu/likes/'
+      'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/mSaRFqdkMnkop7U1e7L5/likes/'
     );
     this.likesOne = await response.json();
     update.likes(this.likesTwo);
