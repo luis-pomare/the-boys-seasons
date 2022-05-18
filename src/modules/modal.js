@@ -6,11 +6,11 @@ class Modal {
     this.modalContent = document.querySelector('#modalContent');
   }
 
-  displayModal = (comBtn,episodes) => {
-     comBtn.forEach((btn) => {
-      btn.addEventListener('click', async (e) => {
+  displayModal = (comBtn, episodes) => {
+    comBtn.forEach((btn) => {
+      btn.addEventListener('click', async () => {
         /* display modal */
-        const APIdata = episodes.filter((ep) => ep.id == btn.id);
+        const APIdata = episodes.filter((ep) => ep.id === parseInt(btn.id, 10));
         this.commentModal.style.display = 'block';
         this.modalContent.innerHTML = `
        <img src="${APIdata[0].image.medium}" alt="poster">
@@ -37,10 +37,7 @@ class Modal {
     });
   }
 
-  getEpisodes = (episodes) => {
-  
-    return episodes;
-  }
+  getEpisodes = (episodes) => episodes
 }
 
 const modal = new Modal();
