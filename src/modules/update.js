@@ -17,7 +17,7 @@ class Update {
           </div>
         <div class='likes-container'>
         <i class="fa-solid fa-heart"></i>
-        <p class="likes-counter">5 likes</p>
+        <p class="likes-counter">0 likes</p>
         </div>
         <button class="comments-button" id="${info[i].id}">Comments</button>
       </div>
@@ -28,6 +28,10 @@ class Update {
     /* getNodeList for comments buttons */
     const com = document.querySelectorAll('.comments-button');
     modal.displayModal(com, info);
+  }
+
+  likes(info) {
+    console.log(info);
   }
 }
 

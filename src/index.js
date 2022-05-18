@@ -7,5 +7,6 @@ document.getElementById('logoimg').src = Icon; // Main logo displaying
 
 window.onload = () => {
   storage.getSeasonOne();
+  storage.getLikesOne();
   navListeners();
 };
