@@ -1,15 +1,14 @@
 import storage from './storage.js';
+import update from './update.js';
 
-function navListeners() {
+export default () => {
   document.getElementById('seasonOne').addEventListener('click', () => {
     storage.getSeasonOne();
-    storage.getLikes();
+    update.getLikes();
   });
 
   document.getElementById('seasonTwo').addEventListener('click', () => {
     storage.getSeasonTwo();
-    storage.getLikes();
+    update.getLikes();
   });
-}
-
-export default navListeners;
+};
