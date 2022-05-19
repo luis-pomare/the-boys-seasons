@@ -20,7 +20,7 @@ export const getCommnets = async (id) => {
       dataArray.push(item);
     });
   } catch (error) {
-    return error;
+    console.log(error);
   }
   return dataArray;
 };
