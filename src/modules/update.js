@@ -1,3 +1,4 @@
+import homeCounter from './home-counter.js';
 import modal from './modal.js';
 
 class Update {
@@ -46,6 +47,7 @@ class Update {
     }
     this.inUse = true;
 
+    homeCounter(info[0].season);
     /* getNodeList for comments buttons */
     const com = document.querySelectorAll('.comments-button');
     modal.displayModal(com, info);
