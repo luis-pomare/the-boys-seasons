@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/luis-pomare/the-boys-seasons#readme",
   "devDependencies": {
+    "@babel/plugin-transform-modules-commonjs": "^7.17.12",
     "babel-eslint": "^10.1.0",
     "css-loader": "^6.7.1",
     "eslint": "^7.32.0",
@@ -27,6 +28,8 @@
     "eslint-plugin-import": "^2.26.0",
     "hint": "^6.2.0",
     "html-webpack-plugin": "^5.5.0",
+    "jest": "^28.1.0",
+    "jest-environment-jsdom": "^28.1.0",
     "style-loader": "^3.3.1",
     "stylelint": "^13.13.1",
     "stylelint-config-standard": "^21.0.0",
@@ -37,6 +40,7 @@
     "webpack-dev-server": "^4.7.4"
   },
   "dependencies": {
+    "jsdom": "^19.0.0",
     "lodash": "^4.17.21"
   },
   "main": "webpack.config.js"

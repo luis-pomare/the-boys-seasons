@@ -1,12 +1,13 @@
-import _ from "lodash";
-import "./style.css";
-function component() {
-  const element = document.createElement("div");
+import './style.css';
+import storage from './modules/storage.js';
+import Icon from './image/logo.jpg';
+import navListeners from './modules/navListeners.js';
+import update from './modules/update.js';
 
-  // Lodash, now imported by this script
-  element.innerHTML = _.join(["Hello", "webpack"], " ");
-  element.classList.add("hello");
-  return element;
-}
+document.getElementById('logoimg').src = Icon; // Main logo displaying
 
-document.body.appendChild(component());
+window.onload = () => {
+  storage.getSeasonOne();
+  update.getLikes();
+  navListeners();
+};

@@ -1,3 +1,216 @@
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 h1 {
-  color: rgb(11, 128, 0);
+  color: #b4e197;
+}
+
+body {
+  background-color: #f1eee9;
+  box-sizing: border-box;
+}
+
+header {
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  background-image:
+    linear-gradient(
+      to bottom right,
+      rgba(0, 0, 0, 0.9) 20%,
+      rgba(241, 238, 233, 0.5)
+    );
+  height: 300px;
+}
+
+nav {
+  display: flex;
+  margin: 0 auto;
+  gap: 100px;
+  width: 100%;
+  max-width: 800px;
+  height: 80px;
+}
+
+nav .logo {
+  width: 100%;
+  max-width: 100px;
+}
+
+nav .list-items {
+  display: flex;
+  width: 400px;
+  justify-content: space-between;
+  list-style: none;
+}
+
+.list-items .list-item {
+  padding: 10px;
+}
+
+.list-items .list-item a {
+  color: #7ad33f;
+  font-size: 26px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.list-items .list-item:hover {
+  color: #b4e197;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #73777b;
+  width: 200px;
+  height: 300px;
+  margin: 10px;
+  padding: 20px;
+}
+
+.image {
+  width: 90%;
+}
+
+button {
+  padding: 7px;
+  font-weight: 700;
+  font-size: 17px;
+  cursor: pointer;
+}
+
+#container {
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: center;
+  align-items: center;
+  gap: 200px 150px;
+  margin: 30px;
+  overflow-y: visible;
+}
+
+footer {
+  display: flex;
+  height: 30px;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  border: 4px groove #73777b;
+}
+
+/* Modal  */
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+#modalContent {
+  background: #b4e197;
+  margin: 20% auto;
+  padding: 10px;
+  width: 70%;
+  border: 3px solid green;
+}
+
+#comForm {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  margin: 5% auto;
+  gap: 10px;
+}
+
+#addCom {
+  color: red;
+}
+
+.comInputs {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.comInput {
+  padding: 10px;
+}
+
+.commentBtn {
+  width: 80px;
+  background-color: #929992;
+  border: none;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  height: 30px;
+  text-decoration: none;
+  display: inline-block;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+  margin: 0 auto;
+}
+
+.commentBtn:hover,
+.commentBtn:focus {
+  background-color: #eaf0ea;
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.close {
+  color: red;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.fa-heart {
+  color: rgb(215, 40, 69);
+  font-size: 27px;
+  cursor: pointer;
+}
+
+.likes-counter {
+  font-weight: 700;
+}
+
+.likes-container {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.counters {
+  font-weight: 900;
+  text-align: center;
+  justify-self: center;
+  font-size: 20px;
 }
