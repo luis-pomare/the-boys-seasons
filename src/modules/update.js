@@ -1,7 +1,27 @@
 import modal from './modal.js';
-import likesListeners from './likesListeners.js';
 
 class Update {
+  updateLikes(info) {
+    const cards = document.getElementById('container').children;
+    for (let i = 0; i < info.length; i += 1) {
+      for (let j = 0; j < cards.length; j += 1) {
+        const element = cards[j].children[2].children[1].dataset.id;
+        if (info[i].item_id === element) {
+          cards[j].children[2].children[1].innerText = `${info[i].likes} likes`;
+          this.found = true;
+        }
+      }
+    }
+  }
+
+  getLikes = async () => {
+    const response = await fetch(
+      'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/mSaRFqdkMnkop7U1e7L5/likes/',
+    );
+    this.likes = await response.json();
+    this.updateLikes(this.likes);
+  };
+
   season(info) {
     const container = document.getElementById('container');
     container.innerHTML = '';
@@ -30,19 +50,23 @@ class Update {
     const com = document.querySelectorAll('.comments-button');
     modal.displayModal(com, info);
 
-    likesListeners();
-  }
-
-  likes(info) {
     const cards = document.getElementById('container').children;
-    for (let i = 0; i < info.length; i += 1) {
-      for (let j = 0; j < cards.length; j += 1) {
-        const element = cards[j].children[2].children[1].dataset.id;
-        if (info[i].item_id === element) {
-          cards[j].children[2].children[1].innerText = `${info[i].likes} likes`;
-          this.found = true;
-        }
-      }
+    for (let i = 0; i < cards.length; i += 1) {
+      cards[i].children[2].children[0].addEventListener('click', async () => {
+        await fetch(
+          'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/mSaRFqdkMnkop7U1e7L5/likes/',
+          {
+            method: 'POST',
+            body: JSON.stringify({
+              item_id: cards[i].children[2].children[0].dataset.id,
+            }),
+            headers: {
+              'Content-type': 'application/json; charset=UTF-8',
+            },
+          },
+        );
+        this.getLikes();
+      });
     }
   }
 }

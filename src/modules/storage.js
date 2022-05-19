@@ -17,14 +17,6 @@ class Storage {
     this.seasonTwo.splice(3, 1);
     update.season(this.seasonTwo);
   };
-
-  getLikes = async () => {
-    const response = await fetch(
-      'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/mSaRFqdkMnkop7U1e7L5/likes/',
-    );
-    this.likes = await response.json();
-    update.likes(this.likes);
-  };
 }
 
 export default new Storage();
