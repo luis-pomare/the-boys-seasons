@@ -14,7 +14,6 @@ class Storage {
       'https://api.tvmaze.com/seasons/103731/episodes',
     );
     this.seasonTwo = await response.json();
-    this.seasonTwo.splice(3, 1);
     update.season(this.seasonTwo);
   };
 }
