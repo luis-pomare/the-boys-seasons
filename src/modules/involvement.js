@@ -20,6 +20,7 @@ export const getCommnets = async (id) => {
       dataArray.push(item);
     });
   } catch (error) {
+    /* This code shows caught error for item_id not found */
     console.log(error);
   }
   return dataArray;
