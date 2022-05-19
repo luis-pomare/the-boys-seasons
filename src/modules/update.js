@@ -67,7 +67,11 @@ class Update {
             },
           },
         );
-        this.getLikes();
+        for (let i = 0; i < 3; i += 1) {
+          setTimeout(() => {
+            this.getLikes();
+          }, 500);
+        }
       });
     }
   }
