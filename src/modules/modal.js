@@ -18,6 +18,7 @@ class Modal {
         const commentData = await getCommnets(btn.id);
         const APIdata = episodes.filter((ep) => ep.id === parseInt(btn.id, 10));
         this.commentModal.style.display = 'block';
+
         this.modalContent.innerHTML = `
        <img src="${APIdata[0].image.medium}" alt="poster">
       <h1 style="color: red;">Episode ${APIdata[0].number}</h1>
@@ -39,7 +40,6 @@ class Modal {
           <input type="button" value="Submit" class="commentBtn" id= "${btn.id}">
         </form>
        </div>`;
-
         const comCount = document.querySelector('#comCount');
         comCount.textContent = commentCount(commentData);
 
@@ -52,7 +52,6 @@ class Modal {
         });
 
         const commentBtn = document.querySelector('.commentBtn');
-        console.log(commentBtn);
         commentBtn.addEventListener('click', (e) => createComment(e, btn));
         /* close modal */
         this.closeBtn.addEventListener('click', () => {

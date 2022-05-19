@@ -16,13 +16,14 @@ const createComment = async (e, btn) => {
     comment: comment.value,
   };
   const postResponse = await postComment(body);
-  console.log(postResponse);
+  const messege = postResponse;
+  form.lastElementChild.value = messege;
   form.reset();
 
   const commentData = await getCommnets(btn.id);
 
   comCount.textContent = commentCount(commentData);
-
+  comDetail.innerHTML = ' ';
   commentData.forEach((item) => {
     const p = document.createElement('p');
     p.className = 'comment-item';

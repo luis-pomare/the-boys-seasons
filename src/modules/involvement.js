@@ -1,5 +1,4 @@
 const url = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/mSaRFqdkMnkop7U1e7L5/';
-
 export const postComment = async (body) => {
   const response = await fetch(`${url}comments`, {
     method: 'POST',
@@ -21,7 +20,7 @@ export const getCommnets = async (id) => {
       dataArray.push(item);
     });
   } catch (error) {
-    console.log(error);
+    return error;
   }
   return dataArray;
 };
