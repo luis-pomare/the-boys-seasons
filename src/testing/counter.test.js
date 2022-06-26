@@ -1,4 +1,3 @@
-/** * @jest-environment jsdom */
 import commentCount from '../modules/commentCount.js';
 
 describe('Counter comments test', () => {
