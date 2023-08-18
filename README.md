@@ -148,18 +148,16 @@ Example:
 - Twitter: [@LuisPomare1](https://twitter.com/LuisPomare1)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/luis-pomare/)
 
-👤 **David Espino**
+👤 **ISAAC (MAQUEEN) MUSUNGWA**
 
-- GitHub: [@DavidEspinoG](https://github.com/DavidEspinoG)
-- Twitter: [@LuisPomare1](https://twitter.com/DavidEspinoG)
-- LinkedIn: [LinkedIn](https://www.linkedin.com/in/davidespinog/)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/musungwaisaac/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- **Fully functional UI**
-- **Controller implementation**
+- **Include season 3**
+- **Improve performance**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -167,13 +165,13 @@ Example:
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/luis-pomare/rails-blog-app/issues).
+Feel free to check the [issues page](https://github.com/luis-pomare/the-boys-seasons/issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## ⭐️ Show your support <a name="support"></a>
 
-If you like this project you can give us some stars and share with your friends
+If you like this project you can give us some stars and share it with your friends
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
