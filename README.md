@@ -73,9 +73,7 @@ To get a local copy up and running follow these simple example steps.
 > You need the following tools be installed in your computer:
 
 > - [Git](https://www.linode.com/docs/guides/how-to-install-git-on-linux-mac-and-windows/)
-> - [Ruby](https://github.com/microverseinc/curriculum-ruby/blob/main/simple-ruby/articles/ruby_installation_instructions.md)
 > - IDE
-> - progreSql
 
 ### Setup
 
@@ -84,7 +82,7 @@ Clone this repository to your desired folder:
 ```sh
   cd my-prefered-folder
 
-  git clone https://github.com/luis-pomare/blog-app.git
+  git clone https://github.com/luis-pomare/the-boys-seasons.git
 
 ```
 
@@ -111,16 +109,8 @@ To run the project, execute the following command:
 To run tests, run the following command:
 
 ```sh
-  rspec spec/
+  npm run test
 ```
-
-<!--
-Example command:
-
-```sh
-  bin/rails test test/models/article_test.rb
-```
---->
 
 ### Deployment
 
